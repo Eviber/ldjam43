@@ -29,15 +29,22 @@ function new_renderer_system()
 	return renderer
 end
 
+local player_type = {
+	{new_body, 100, 300},
+	{new_rectangle_component}
+}
+
 
 function love.load()
 	World:register(new_renderer_system())
 	local entity = World:create()
 	local entity2 = World:create()
 	entity:add(new_body(100,100))
-	entity2:add (new_body(100,200))
+	--entity2:add (new_body(100,200))
 	entity:add(new_rectangle_component())
-	entity2:add(new_rectangle_component())
+	--entity2:add(new_rectangle_component())
+	
+	local test = World:assemble(player_type)
 end
 
 

@@ -8,7 +8,29 @@ local World = {
 
 function World:register(system)
 	table.insert(self.systems, system)
+	return system
 end
+
+function World:assemble(components)
+	local entity = self:create()
+	for i, v in ipairs(components) do
+		assert(type(v) == "table")
+		assert(#v > 0)
+		local fn = v[1]
+		assert(type(fn) == "function")
+		
+		if #v == 1 then
+			entity:add(fn())
+		else
+			local args = {}
+			for i = 2, #v do
+				table.insert(args, v[i])
+			end
+			entity:add(fn(unpack(args)))
+		end
+	end
+end
+
 
 function World:create()
 	local entity = Entity.new()
