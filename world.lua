@@ -43,6 +43,7 @@ end
 
 function World:draw()
 	for i = 1, #self.entities do
+		local entity = self.entities[i]
 		for i, system in ipairs(self.systems) do
 			if system:match(entity) then
 				system:draw(entity)
