@@ -1,3 +1,4 @@
+local TLfres = require "tlfres"
 local Gamestate = require "hump.gamestate"
 local lg = love.graphics
 local isDown = love.keyboard.isDown
@@ -96,14 +97,16 @@ function drawqueue()
 end
 
 function drawpriest()
-	lg.draw(shaman, pose, W/2-125, 180, 0, 0.3)
+	lg.draw(shaman, pose, 835, 180, 0, 0.3)
 end
 
 function gGame:draw()
+	TLfres.beginRendering(1920, 1080)
 	lg.draw(bg)
 	drawpriest()
 	drawcombo()
 	drawqueue()
+	TLfres.endRendering({0,0,0,0})
 end
 
 
