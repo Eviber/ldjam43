@@ -36,6 +36,7 @@ end]]
 
 function love.load()
 	math.randomseed(os.time())
+	love.keyboard.setKeyRepeat(false)
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
 	font = lg.newFont("roboto.ttf")
