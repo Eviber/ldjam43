@@ -26,6 +26,7 @@ function new_renderer_system()
 
 
 function love.load()
+	love.keyboard.setKeyRepeat(false)
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
 	font = lg.newFont("roboto.ttf")

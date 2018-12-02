@@ -37,10 +37,16 @@ function gGame:init()
 		left = lg.newText(font, "left"),
 		right = lg.newText(font, "right")
 	}
+
 	shaman = lg.newImage("shaman.png")
+	poses = {}
+	for x = 0, 4550, 650 do
+		poses[#poses + 1] = lg.newQuad(x, 0, 650, 650, shaman:getDimensions())
+	end
+	pose = poses[1]
+
 	sheet = lg.newImage("dudes.png")
 	sprit = {}
-
 	for y = 0, 420, 420 do
 		for x = 0, 1800, 300 do
 			sprit[#sprit + 1] = lg.newQuad(x, y, 300, 420, sheet:getDimensions())
@@ -59,6 +65,7 @@ function gGame:init()
 		push()
 	end
 	c = 2
+	lastinput = 0
 end
 
 function drawcombo()
@@ -97,6 +104,7 @@ function drawqueue()
 end
 
 function drawpriest()
+	lg.draw(shaman, pose, W/2-125, 180, 0, 0.3)
 end
 
 function gGame:draw()
@@ -106,8 +114,21 @@ function gGame:draw()
 	drawqueue()
 end
 
-function getInput()
-	if isDown(queue[1][c]) then
+function gGame:keypressed(key, scancode, isrepeat)
+	if scancode == "up" then
+		pose = poses[2]
+		lastinput = love.timer.getTime()
+	elseif scancode == "down" then
+		pose = poses[3]
+		lastinput = love.timer.getTime()
+	elseif scancode == "right" then
+		pose = poses[4]
+		lastinput = love.timer.getTime()
+	elseif scancode == "left" then
+		pose = poses[5]
+		lastinput = love.timer.getTime()
+	end
+	if scancode == queue[1][c] then
 		c = c + 1
 		if c > #queue[1] then
 			c = 2
@@ -117,5 +138,7 @@ function getInput()
 end
 
 function gGame:update(dt)
-	getInput()
+	if lastinput + 0.5 < love.timer.getTime() then
+		pose = poses[1]
+	end
 end
