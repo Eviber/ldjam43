@@ -10,19 +10,28 @@ local lg = love.graphics
 local isDown = love.keyboard.isDown
 
 function new_renderer_system()
-		local renderer = System.new {"body", "rect"}
-		--if renderer == nil then print "it's nil" else print "wtf" end
-		
-		function renderer:load(entity)
-			print "found one"
-		end
-		
-		function renderer:draw(entity)
-			local body = entity:get "body"
-			love.graphics.rectangle('fill', body.x, body.y, 32, 64)
-		end
-		return renderer
+	local renderer = System.new {"body", "rect"}
+	
+	function renderer:load(entity)
+		print "found one"
 	end
+	
+	function renderer:draw(entity)
+		local body = entity:get "body"
+		love.graphics.rectangle('fill', body.x, body.y, 32, 64)
+	end
+	return renderer
+end
+
+--[[function new_combo_manager_system()
+	local manager = System:new {"combo"}
+	function manager:draw(entity)
+		local combo = entity:get "combo"
+		
+	end
+	
+end]]
+
 
 
 function love.load()
