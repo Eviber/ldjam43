@@ -8,7 +8,17 @@ local dudes = {
 	{1, "up", "down"},
 	{2, "down", "down"},
 	{3, "left", "down"},
-	{4, "right", "up"}
+	{4, "right", "up"},
+	{5, "right", "up"},
+	{6, "right", "up"},
+	{7, "right", "up"},
+	{8, "right", "up"},
+	{9, "right", "up"},
+	{10, "right", "up"},
+	{11, "right", "up"},
+	{12, "right", "up"},
+	{13, "right", "up"},
+	{14, "right", "up"},
 }
 
 function push()
@@ -45,7 +55,7 @@ function gGame:init()
 	}
 
 	queue = {}
-	for i = 1, 10 do
+	for i = 1, 13 do
 		push()
 	end
 	c = 2
@@ -63,16 +73,26 @@ function drawcombo()
 end
 
 function drawqueue()
-	x = W/2 - 50
-	y = 165
-	for _, val in ipairs(queue) do
-		if _ == 1 then
-			lg.draw(sheet, sprit[val[1]], x-100, y + 100, -math.pi/2, -0.5, 0.5)
-		else
-			lg.draw(sheet, sprit[val[1]], x, y, 0, 0.5)
-		end
-		x = x + 500
-		y = y + 400
+	local x = W/2 - 50
+	local y = 165
+	local pos = {
+		{860, 300, -math.pi/2, -0.3, 0.3},
+		{1010, 328, 0, 0.3},
+		{1060, 400, 0, 0.3},
+		{1110, 475, 0, 0.3},
+		{1160, 550, 0, 0.3},
+		{1210, 620, 0, 0.3},
+		{1260, 674, 0, 0.3},
+		{1360, 720, 0, 0.3},
+		{1460, 720, 0, 0.3},
+		{1560, 720, 0, 0.3},
+		{1660, 720, 0, 0.3},
+		{1760, 720, 0, 0.3},
+		{1860, 720, 0, 0.3},
+	}
+
+	for i, val in ipairs(queue) do
+		lg.draw(sheet, sprit[val[1]], unpack(pos[i]))
 	end
 end
 
