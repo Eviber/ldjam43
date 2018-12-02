@@ -37,6 +37,7 @@ function gGame:init()
 		left = lg.newText(font, "left"),
 		right = lg.newText(font, "right")
 	}
+	shaman = lg.newImage("shaman.png")
 	sheet = lg.newImage("dudes.png")
 	sprit = {}
 
