@@ -8,6 +8,11 @@ function new_combo()
 	return combo_line
 end
 
-combo_line_type = {
-	{new_combo}
-}
+function new_combo_line_manager()
+	local manager = System.new {"combo_line"}
+	
+	function manager:update(entity)
+		
+	end
+end
+
