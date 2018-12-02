@@ -42,7 +42,6 @@ function gGame:init()
 
 	for y = 0, 420, 420 do
 		for x = 0, 1800, 300 do
-			print(x, y)
 			sprit[#sprit + 1] = lg.newQuad(x, y, 300, 420, sheet:getDimensions())
 		end
 	end
@@ -98,6 +97,7 @@ end
 
 function gGame:draw()
 	lg.draw(bg)
+	drawpriest()
 	drawcombo()
 	drawqueue()
 end
