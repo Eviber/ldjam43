@@ -96,6 +96,9 @@ function drawqueue()
 	end
 end
 
+function drawpriest()
+end
+
 function gGame:draw()
 	lg.draw(bg)
 	drawpriest()
