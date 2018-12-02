@@ -1,7 +1,7 @@
 local Gamestate = require "hump.gamestate"
 require "game"
 
-local World = require ("world") 
+local World = require "world"
 local Component = require "component"
 local System = require "system"
 local coms = require "common_components"
@@ -26,6 +26,7 @@ function new_renderer_system()
 
 
 function love.load()
+	math.randomseed(os.time())
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
 	font = lg.newFont("roboto.ttf")

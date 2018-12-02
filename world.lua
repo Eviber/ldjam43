@@ -29,6 +29,7 @@ function World:assemble(components)
 			entity:add(fn(unpack(args)))
 		end
 	end
+	return entity
 end
 
 

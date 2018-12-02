@@ -1,28 +1,19 @@
 local Gamestate = require "hump.gamestate"
 local lg = love.graphics
 local isDown = love.keyboard.isDown
+local World = require "world"
+local Component = require "component"
+local System = require "system"
+local coms = require "common_components"
+local dudes = require "dudes"
 
 gGame = {}
 
-local dudes = {
-	{1, "up", "down"},
-	{2, "down", "down"},
-	{3, "left", "down"},
-	{4, "right", "up"},
-	{5, "right", "up"},
-	{6, "right", "up"},
-	{7, "right", "up"},
-	{8, "right", "up"},
-	{9, "right", "up"},
-	{10, "right", "up"},
-	{11, "right", "up"},
-	{12, "right", "up"},
-	{13, "right", "up"},
-	{14, "right", "up"},
-}
+local typelist = {}
 
 function push()
-	table.insert(queue, dudes[math.random(#dudes)])
+	--table.insert(queue, dudes[math.random(#dudes)])
+	table.insert(queue, World:assemble(typelist[math.random(#typelist)]))
 end
 
 function pop()
@@ -42,11 +33,11 @@ function gGame:init()
 
 	for y = 0, 420, 420 do
 		for x = 0, 1800, 300 do
-			print(x, y)
 			sprit[#sprit + 1] = lg.newQuad(x, y, 300, 420, sheet:getDimensions())
 		end
 	end
 
+	typelist = init_dudes()
 	bg = lg.newImage("background.png")
 	blood = {
 		lg.newImage("blood1.png"),
@@ -92,7 +83,7 @@ function drawqueue()
 	}
 
 	for i, val in ipairs(queue) do
-		lg.draw(sheet, sprit[val[1]], unpack(pos[i]))
+		lg.draw(sheet, val:get("sheet").quads, unpack(pos[i]))
 	end
 end
 
@@ -102,16 +93,7 @@ function gGame:draw()
 	drawqueue()
 end
 
-function getInput()
-	if isDown(queue[1][c]) then
-		c = c + 1
-		if c > #queue[1] then
-			c = 2
-			pop()
-		end
-	end
-end
 
 function gGame:update(dt)
-	getInput()
+
 end
