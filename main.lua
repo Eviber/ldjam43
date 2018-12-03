@@ -38,6 +38,7 @@ end]]
 
 function love.load()
 	math.randomseed(os.time())
+	love.mouse.setVisible(false)
 	love.keyboard.setKeyRepeat(false)
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
