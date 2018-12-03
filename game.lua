@@ -133,7 +133,6 @@ function gGame:keypressed(key, scancode, isrepeat)
 		lastinput = love.timer.getTime()
 	end
 	if scancode == "up" or scancode == "down" or scancode == "left" or scancode == "right" then
-		sfx.shaman[scancode]:clone():play()
 		table.insert(last_key, scancode)
 	end
 	

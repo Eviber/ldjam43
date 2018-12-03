@@ -24,13 +24,16 @@ function new_combo_line_manager()
 			if keys.cursor <= keys.size then
 				if val == keys.line[keys.cursor] or keys.line[keys.cursor] == "any" then
 					keys.cursor = keys.cursor + 1
+					sfx.shaman[val]:clone():play()
 				else
 					keys.cursor = 1
+					sfx.shaman.hm:clone():play()
 				end
 			end
 			if keys.cursor > keys.size then
 				--go kaboom
 				score = score + queue[1]:get("value").points
+				sfx.kill[math.random(#sfx.kill)]:clone():play()
 				pop()
 				keys.line = queue[1]:get("combo").template
 				keys.size = #queue[1]:get("combo").template
