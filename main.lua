@@ -70,6 +70,7 @@ function love.load()
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
 	sfx.load()
+	vfx.load()
 	menufont = lg.newFont("aztecways.ttf", 200)
 	font = lg.newFont("roboto.ttf", 70)
 
