@@ -12,6 +12,7 @@ local sfx = require "sfx"
 last_key = {}
 
 local typelist = {}
+local timer = 100
 
 function push()
 	--table.insert(queue, dudes[math.random(#dudes)])
@@ -113,7 +114,10 @@ function gGame:draw()
 	drawcombo()
 	drawqueue()
 	World:draw()
-	lg.print(string.format("%08d", score))
+	local buttonfont = lg.newFont("aztecways.ttf", 130)
+	lg.setFont(buttonfont)
+	lg.print(string.format("%08d", score), 20, -20)
+	lg.print(string.format("%03d", math.ceil(timer)), 1780, -20)
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -150,4 +154,5 @@ function gGame:update(dt)
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end
+	timer = timer - dt
 end
