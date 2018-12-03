@@ -24,8 +24,10 @@ function new_combo_line_manager()
 			if keys.cursor <= keys.size then
 				if val == keys.line[keys.cursor] or keys.line[keys.cursor] == "any" then
 					keys.cursor = keys.cursor + 1
+					sfx.shaman[val]:clone():play()
 				else
 					keys.cursor = 1
+					sfx.shaman.hm:clone():play()
 				end
 			end
 			if keys.cursor > keys.size then
