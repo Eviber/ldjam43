@@ -8,6 +8,7 @@ local selected
 function gMenu:init()
 	lg.setFont(menufont)
 	selected = "Play"
+	title_screen = lg.newImage("titlescreen.png")
 end
 
 
@@ -22,14 +23,16 @@ function gMenu:draw()
 	local key_sheet = lg.newImage("keys.png")
 	local arrow = lg.newQuad(453, 0, 151, 137, key_sheet:getDimensions())
 	
-	lg.setFont(menufont)
-	lg.print("Dance Dance", W - 370, H - 500)
-	lg.print("SACRIFICES", W - 650, H - 300)
-
-	lg.print("Play", W - 150, H - 50)
-	lg.print("Credits", W - 230, H + 150)
+	lg.draw(title_screen)
 	
-	local tmp = (selected == "Play" and {W-400, H-40} or {W-480, H+150})
+	--lg.setFont(menufont)
+	--lg.print("Dance Dance", W - 370, H - 500)
+	--lg.print("SACRIFICES", W - 650, H - 300)
+
+	--lg.print("Play", W - 150, H - 50)
+	--lg.print("Credits", W - 230, H + 150)
+	
+	local tmp = (selected == "Play" and {W+60, H+190, 0, 0.6} or {W+60, H+360, 0, 0.6})
 	lg.draw(key_sheet, arrow, unpack(tmp))
 	
 	TLfres.endRendering({0,0,0,0})
