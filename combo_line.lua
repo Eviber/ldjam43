@@ -7,8 +7,8 @@ local key_tab = {"up", "down", "left", "right"}
 
 function new_combo()
 	local combo_line = Component.new "combo_line"
-	combo_line.line = queue[1].combo
-	for i, val in ipairs(combo_line.line) do
+	combo_line.line = queue[1]["combo"]
+	for i, val in ipairs(combo_line) do
 		if val == "wild" then
 			val = key_tab[math.random(#key_tab)]
 		end
