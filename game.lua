@@ -12,6 +12,7 @@ local sfx = require "sfx"
 last_key = {}
 
 local timer = 100
+local buttonfont = lg.newFont("saru.ttf", 70)
 
 function push()
 	--table.insert(queue, dudes[math.random(#dudes)])
@@ -83,10 +84,10 @@ function gGame:draw()
 	drawcombo()
 	drawqueue()
 	World:draw()
-	local buttonfont = lg.newFont("aztecways.ttf", 130)
 	lg.setFont(buttonfont)
-	lg.print(string.format("%08d", score), 20, -20)
-	lg.print(string.format("%03d", math.ceil(timer)), 1780, -20)
+	--lg.setColor(51/255, 51/255, 51/255)
+	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
+	lg.print({{51/255,51/255,51/255}, string.format("%03d", math.ceil(timer))}, 1780, 10)
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -123,4 +124,8 @@ function gGame:update(dt)
 		pose = poses[1]
 	end
 	timer = timer - dt
+	if timer <= 0 then
+		timer = 100
+		Gamestate.switch(gMenu)
+	end
 end
