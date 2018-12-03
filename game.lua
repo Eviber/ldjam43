@@ -116,8 +116,9 @@ function gGame:draw()
 	drawqueue()
 	World:draw()
 	lg.setFont(buttonfont)
-	lg.print(string.format("%08d", score), 20, 10)
-	lg.print(string.format("%03d", math.ceil(timer)), 1780, 10)
+	--lg.setColor(51/255, 51/255, 51/255)
+	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
+	lg.print({{51/255,51/255,51/255}, string.format("%03d", math.ceil(timer))}, 1780, 10)
 	TLfres.endRendering({0,0,0,0})
 end
 
