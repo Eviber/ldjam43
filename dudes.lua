@@ -19,7 +19,7 @@ function init_dudes()
 	tall_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"up", "up", "up", "wild"}},
+		{coms.new_combo_template, {"up", "up", "up", "down"}},
 		{coms.new_sprite, sheet, sprit[3]}
 	}
 	
@@ -33,21 +33,21 @@ function init_dudes()
 	woman_type_2 = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 200},
-		{coms.new_combo_template, {"up", "down", "wild"}},
+		{coms.new_combo_template, {"up", "down", "left"}},
 		{coms.new_sprite, sheet, sprit[5]}
 	}
 	
 	man_type_2 = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 200},
-		{coms.new_combo_template, {"down", "up", "wild"}},
+		{coms.new_combo_template, {"down", "up", "right"}},
 		{coms.new_sprite, sheet, sprit[6]}
 	}
 	
 	old_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
-		{coms.new_combo_template, {"up", "up", "wild", "down", "down"}},
+		{coms.new_combo_template, {"up", "up", "left", "down", "down"}},
 		{coms.new_sprite, sheet, sprit[7]}
 	}
 	
@@ -75,14 +75,14 @@ function init_dudes()
 	cat_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 1000},
-		{coms.new_combo_template, {"wild","wild","wild","wild","wild","wild","wild","wild","wild"}},
+		{coms.new_combo_template, {"down","down","down","down","down","down","down","down","down"}},
 		{coms.new_sprite, sheet, sprit[11]}
 	}
 	
 	buff_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
-		{coms.new_combo_template, {"left", "right", "up", "down", "wild"}},
+		{coms.new_combo_template, {"left", "right", "up", "down", "up"}},
 		{coms.new_sprite, sheet, sprit[12]}
 	}
 	
