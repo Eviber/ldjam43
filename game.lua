@@ -134,7 +134,7 @@ function gGame:update(dt)
 	timer = timer - dt
 	if timer <= 0 then
 		if day < 7 then 
-			timer = 10
+			timer = 99
 			day = day + 1
 			Gamestate.switch(gTransition)
 		else

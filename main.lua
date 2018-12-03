@@ -6,7 +6,7 @@ gCredits = {}
 gTransition = {}
 score = 0
 day = 1
-timer = 10
+timer = 99
 
 require "menu"
 require "game"
