@@ -10,11 +10,15 @@ local dudes = require "dudes"
 
 gGame = {}
 
+last_key = {}
+
 local typelist = {}
 
 function push()
 	--table.insert(queue, dudes[math.random(#dudes)])
+	--print (World:assemble(typelist[math.random(#typelist)]))
 	table.insert(queue, World:assemble(typelist[math.random(#typelist)]))
+	--print (queue[#queue].value)
 end
 
 function pop()
@@ -23,13 +27,6 @@ function pop()
 end
 
 function gGame:init()
-	text = {
-		up = lg.newText(font, "up"),
-		down = lg.newText(font, "down"),
-		left = lg.newText(font, "left"),
-		right = lg.newText(font, "right")
-	}
-
 	shaman = lg.newImage("shaman.png")
 	poses = {}
 	for x = 0, 4550, 650 do
@@ -44,8 +41,15 @@ function gGame:init()
 			sprit[#sprit + 1] = lg.newQuad(x, y, 300, 420, sheet:getDimensions())
 		end
 	end
+	key_sheet = lg.newImage("keys.png")
+	key_sprit = {}
+	for x = 0, 604, 151 do
+		key_sprit[#key_sprit + 1] = lg.newQuad(x, 0, 151, 137, key_sheet:getDimensions())
+	end
+	
 
 	typelist = init_dudes()
+	--for i, val in pairs(typelist) do print(val[1][1]) end
 	bg = lg.newImage("background.png")
 	blood = {
 		lg.newImage("blood1.png"),
@@ -56,6 +60,7 @@ function gGame:init()
 	queue = {}
 	for i = 1, 13 do
 		push()
+		--print(queue[i].id)
 	end
 	c = 2
 	lastinput = 0
@@ -73,8 +78,6 @@ function drawcombo()
 end
 
 function drawqueue()
-	local x = W/2 - 50
-	local y = 165
 	local pos = {
 		{860, 540, -math.pi/2, -0.3, 0.3},
 		{1050, 570, 0, 0.3},
@@ -124,13 +127,17 @@ function gGame:keypressed(key, scancode, isrepeat)
 		pose = poses[5]
 		lastinput = love.timer.getTime()
 	end
-	if scancode == queue[1][c] then
+	if scancode == "up" or scancode == "down" or scnacode == "left" or scnacode == "right" then
+		table.insert(last_key, scancode)
+	end
+	
+	--[[if scancode == queue[1][c] then
 		c = c + 1
 		if c > #queue[1] then
 			c = 2
 			pop()
 		end
-	end
+	end]]
 end
 
 function gGame:update(dt)

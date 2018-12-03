@@ -23,9 +23,10 @@ function World:assemble(components)
 			entity:add(fn())
 		else
 			local args = {}
-			for i = 2, #v do
-				table.insert(args, v[i])
+			for j = 2, #v do
+				table.insert(args, v[j])
 			end
+			--print(unpack(args))
 			entity:add(fn(unpack(args)))
 		end
 	end
@@ -56,7 +57,7 @@ function World:update(dt)
 					if entity.loaded == false then
 						system:load(entity)
 					end
-					system.update(dt, entity)
+					system:update(dt, entity)
 				end
 			end
 			entity.loaded = true
