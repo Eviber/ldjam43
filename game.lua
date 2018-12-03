@@ -127,7 +127,7 @@ function gGame:keypressed(key, scancode, isrepeat)
 		pose = poses[5]
 		lastinput = love.timer.getTime()
 	end
-	if scancode == "up" or scancode == "down" or scnacode == "left" or scnacode == "right" then
+	if scancode == "up" or scancode == "down" or scancode == "left" or scancode == "right" then
 		table.insert(last_key, scancode)
 	end
 	

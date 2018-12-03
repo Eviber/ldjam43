@@ -27,7 +27,7 @@ function new_combo_line_manager()
 		--print(dt, entity)
 		for i, val in ipairs(last_key) do
 			if keys.cursor <= #queue[1]:get("combo").template then
-				if val == keys.line[keys.cursor] then
+				if val == keys.line[keys.cursor] or keys.line[keys.cursor] == "any" then
 					keys.cursor = keys.cursor + 1
 				else
 					keys.cursor = 1
