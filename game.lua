@@ -109,6 +109,7 @@ function gGame:draw()
 	drawpriest()
 	drawcombo()
 	drawqueue()
+	World:draw()
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -141,7 +142,7 @@ function gGame:keypressed(key, scancode, isrepeat)
 end
 
 function gGame:update(dt)
-	if lastinput + 0.5 < love.timer.getTime() then
+	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end
 end
