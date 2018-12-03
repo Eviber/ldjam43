@@ -25,7 +25,7 @@ function gCredits:draw()
 	lg.print("   Youva Gaudé            Lola Belloni  ", W-830, H-150)
 	lg.print("(twitter@youvadidj)        (instagram   ", W-830, H-50)
 	lg.print(" Théo Le Gac-Dufly       @boudoumgredon)", W-830, H+50)
-	lg.print(" (twitter@Ehaamu)                       ", W-830, H+150)
+	lg.print(" (twitter@EHaamu)                       ", W-830, H+150)
 	
 
 	

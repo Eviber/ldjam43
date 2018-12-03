@@ -12,13 +12,20 @@ local sfx = require "sfx"
 last_key = {}
 
 local typelist = {}
-local timer = 100
 local buttonfont = lg.newFont("saru.ttf", 70)
 
 function push()
+	local t1 = {chicken_type, sheep_type, pig_type}
+	local t2 = {chicken_type, sheep_type, pig_type, woman_type, man_type}
+	local t3 = {chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2}
+	local t4 = {chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2, cat_type, old_man_type}
+	local t5 = {chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2, cat_type, old_man_type, tall_man_type, big_man_type}
+	local t6 = {chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2, cat_type, old_man_type, tall_man_type, big_man_type, buff_man_type}
+	local t7 = {chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2, cat_type, old_man_type, tall_man_type, big_man_type, buff_man_type, king_man_type}
+	local days_tab = {t1, t2, t3, t4, t5, t6, t7}
 	--table.insert(queue, dudes[math.random(#dudes)])
 	--print (World:assemble(typelist[math.random(#typelist)]))
-	table.insert(queue, World:assemble(typelist[math.random(#typelist)]))
+	table.insert(queue, World:assemble(days_tab[day][math.random(#(days_tab[day]))]))
 	--print (queue[#queue].value)
 end
 
@@ -118,7 +125,7 @@ function gGame:draw()
 	lg.setFont(buttonfont)
 	--lg.setColor(51/255, 51/255, 51/255)
 	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
-	lg.print({{51/255,51/255,51/255}, string.format("%03d", math.ceil(timer))}, 1780, 10)
+	lg.print({{51/255,51/255,51/255}, string.format("%02d", math.ceil(timer))}, 1780, 10)
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -156,7 +163,19 @@ function gGame:update(dt)
 	end
 	timer = timer - dt
 	if timer <= 0 then
-		timer = 100
-		Gamestate.switch(gMenu)
+		if day < 7 then 
+			timer = 10
+			day = day + 1
+			Gamestate.switch(gTransition)
+		else
+			Gamestate.switch(gMenu)
+		end
 	end
 end
+
+function gGame:enter()
+	for i = 1, 13 do
+		pop()
+	end
+end
+

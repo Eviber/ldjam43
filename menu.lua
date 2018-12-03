@@ -2,6 +2,7 @@ local Gamestate = require "hump.gamestate"
 local TLfres = require "tlfres"
 local lg = love.graphics
 local credits = require "credits"
+local transition = require "transition"
 
 local selected
 
@@ -42,7 +43,8 @@ end
 function gMenu:keypressed(key, scancode, isrepeat)
 	if scancode == 'return' and selected == "Play" then
 		score = 0
-		Gamestate.switch(gGame)
+		day = 1
+		Gamestate.switch(gTransition)
 	elseif scancode == 'return' and selected == "Credits" then
 		Gamestate.switch(gCredits)
 	elseif scancode == 'escape' then
