@@ -100,5 +100,6 @@ function init_dudes()
 		{coms.new_sprite, sheet, sprit[14]}
 	}
 	
-	return {woman_type, man_type, tall_man_type, big_man_type, woman_type_2, man_type_2, old_man_type, pig_type, sheep_type, chicken_type, cat_type, buff_man_type, --[[superman_type,]] king_man_type}
+	--return {woman_type, man_type, tall_man_type, big_man_type, woman_type_2, man_type_2, old_man_type, pig_type, sheep_type, chicken_type, cat_type, buff_man_type, --[[superman_type,]] king_man_type}
+	return{chicken_type, sheep_type, pig_type, woman_type, man_type, woman_type_2, man_type_2, cat_type, old_man_type, tall_man_type, big_man_type, buff_man_type, king_man_type}
 end

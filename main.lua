@@ -3,7 +3,10 @@ local Gamestate = require "hump.gamestate"
 gGame = {}
 gMenu = {}
 gCredits = {}
+gTransition = {}
 score = 0
+day = 1
+timer = 10
 
 require "menu"
 require "game"
