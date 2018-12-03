@@ -8,6 +8,7 @@ local System = require "system"
 local coms = require "common_components"
 local dudes = require "dudes"
 local sfx = require "sfx"
+local vfx = require "vfx"
 
 last_key = {}
 
@@ -118,6 +119,7 @@ function gGame:draw()
 	lg.setFont(buttonfont)
 	lg.print(string.format("%08d", score), 20, -20)
 	lg.print(string.format("%03d", math.ceil(timer)), 1780, -20)
+	vfx.draw()
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -150,6 +152,7 @@ function gGame:keypressed(key, scancode, isrepeat)
 end
 
 function gGame:update(dt)
+	vfx.update(dt)
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end

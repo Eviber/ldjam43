@@ -34,6 +34,8 @@ function new_combo_line_manager()
 				--go kaboom
 				score = score + queue[1]:get("value").points
 				sfx.kill[math.random(#sfx.kill)]:clone():play()
+				hemo:start()
+				hemo:emit(500)
 				pop()
 				keys.line = queue[1]:get("combo").template
 				keys.size = #queue[1]:get("combo").template
