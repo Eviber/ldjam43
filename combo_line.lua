@@ -33,6 +33,7 @@ function new_combo_line_manager()
 			if keys.cursor > keys.size then
 				--go kaboom
 				--points go up
+				sfx.kill[#sfx.kill]:clone():play()
 				pop()
 				keys.line = queue[1]:get("combo").template
 				keys.size = #queue[1]:get("combo").template
