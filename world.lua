@@ -57,7 +57,7 @@ function World:update(dt)
 					if entity.loaded == false then
 						system:load(entity)
 					end
-					system.update(dt, entity)
+					system:update(dt, entity)
 				end
 			end
 			entity.loaded = true

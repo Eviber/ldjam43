@@ -23,7 +23,6 @@ return{
 	new_combo_template = function(template)
 		local combo = Component.new "combo"
 		combo.template = template
-		combo.cursor = 1
 		return combo
 	end,
 	
