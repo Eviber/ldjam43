@@ -74,7 +74,7 @@ function init_dudes()
 	
 	cat_type = {
 		{coms.new_body, 1860, 720},
-		{coms.new_value, 1000},
+		{coms.new_value, 150},
 		{coms.new_combo_template, {"down","down","down","down","down","down","down","down","down"}},
 		{coms.new_sprite, sheet, sprit[11]}
 	}
@@ -86,12 +86,12 @@ function init_dudes()
 		{coms.new_sprite, sheet, sprit[12]}
 	}
 	
-	superman_type = {
+	--[[superman_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
 		{coms.new_combo_template, {"any"}},
 		{coms.new_sprite, sheet, sprit[13]}
-	}
+	}]]
 	
 	buff_man_type = {
 		{coms.new_body, 1860, 720},
@@ -100,5 +100,5 @@ function init_dudes()
 		{coms.new_sprite, sheet, sprit[14]}
 	}
 	
-	return {woman_type, man_type, tall_man_type, big_man_type, woman_type_2, man_type_2, old_man_type, pig_type, sheep_type, chicken_type, cat_type, buff_man_type, superman_type, king_man_type}
+	return {woman_type, man_type, tall_man_type, big_man_type, woman_type_2, man_type_2, old_man_type, pig_type, sheep_type, chicken_type, cat_type, buff_man_type, --[[superman_type,]] king_man_type}
 end

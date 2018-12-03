@@ -30,7 +30,7 @@ function new_combo_line_manager()
 			end
 			if keys.cursor > keys.size then
 				--go kaboom
-				--points go up
+				score = score + queue[1]:get("value").points
 				pop()
 				keys.line = queue[1]:get("combo").template
 				keys.size = #queue[1]:get("combo").template

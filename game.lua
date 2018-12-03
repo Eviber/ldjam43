@@ -113,6 +113,7 @@ function gGame:draw()
 	drawcombo()
 	drawqueue()
 	World:draw()
+	lg.print(string.format("%08d", score))
 	TLfres.endRendering({0,0,0,0})
 end
 

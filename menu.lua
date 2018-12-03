@@ -38,6 +38,7 @@ end
 
 function gMenu:keypressed(key, scancode, isrepeat)
 	if scancode == 'return' and selected == "Play" then
+		score = 0
 		Gamestate.switch(gGame)
 	elseif scancode == 'return' and selected == "Credits" then
 		Gamestate.switch(gCredits)
