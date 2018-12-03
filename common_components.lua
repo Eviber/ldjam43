@@ -26,10 +26,11 @@ return{
 		return combo
 	end,
 	
-	new_sprite = function(quads)
-		local sheet = Component.new "sheet"
-		sheet.quads = quads
-		return sheet
+	new_sprite = function(sheet, quads)
+		local sprite = Component.new "sprite"
+		sprite.quads = quads
+		sprite.sheet = sheet
+		return sprite
 	end
 	
 }

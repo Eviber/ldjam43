@@ -60,6 +60,7 @@ function love.load()
 	--for i, val in ipairs(queue[1]) do print (val) end
 	local manager = World:create()
 	manager:add(new_combo())
+	manager:add(coms.new_sprite(key_sheet, key_sprit))
 end
 
 

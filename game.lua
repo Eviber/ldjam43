@@ -95,7 +95,7 @@ function drawqueue()
 	}
 
 	for i, val in ipairs(queue) do
-		lg.draw(sheet, val:get("sheet").quads, unpack(pos[i]))
+		lg.draw(val:get("sprite").sheet, val:get("sprite").quads, unpack(pos[i]))
 	end
 end
 
