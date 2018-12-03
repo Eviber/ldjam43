@@ -9,8 +9,6 @@ local coms = require "common_components"
 local dudes = require "dudes"
 local sfx = require "sfx"
 
-gGame = {}
-
 last_key = {}
 
 local typelist = {}
@@ -65,6 +63,10 @@ function gGame:init()
 	end
 	c = 2
 	lastinput = 0
+	World:register(new_combo_line_manager())
+	local manager = World:create()
+	manager:add(new_combo())
+	manager:add(coms.new_sprite(key_sheet, key_sprit))
 end
 
 function drawcombo()
