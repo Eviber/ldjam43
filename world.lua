@@ -23,9 +23,10 @@ function World:assemble(components)
 			entity:add(fn())
 		else
 			local args = {}
-			for i = 2, #v do
-				table.insert(args, v[i])
+			for j = 2, #v do
+				table.insert(args, v[j])
 			end
+			print(unpack(args))
 			entity:add(fn(unpack(args)))
 		end
 	end

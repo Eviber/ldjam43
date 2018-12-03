@@ -1,5 +1,6 @@
 local Gamestate = require "hump.gamestate"
 require "game"
+require "combo_line"
 
 local World = require "world"
 local Component = require "component"
@@ -13,7 +14,7 @@ function new_renderer_system()
 	local renderer = System.new {"body", "rect"}
 	
 	function renderer:load(entity)
-		print "found one"
+		
 	end
 	
 	function renderer:draw(entity)
@@ -43,7 +44,8 @@ function love.load()
 	Gamestate.switch(gGame)
 
 	World:register(new_renderer_system())
-	local entity = World:create()
+	World:register(new_combo_line_manager())
+	--[[local entity = World:create()
 	entity:madd(coms.new_body(100,100))
 		  :madd(coms.new_rectangle_component())
 	--local entity2 = World:create()
@@ -53,7 +55,10 @@ function love.load()
 	local test = World:assemble{
 		{coms.new_body, 100, 300},
 		{coms.new_rectangle_component}
-	}
+	}]]
+	--for i, val in ipairs(queue[1]) do print (val) end
+	local manager = World:create()
+	manager:add(new_combo())
 end
 
 
