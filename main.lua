@@ -1,6 +1,7 @@
 local Gamestate = require "hump.gamestate"
 require "game"
 require "combo_line"
+require "sfx"
 --cursor = 1
 
 local World = require "world"
@@ -43,6 +44,7 @@ function love.load()
 	Gamestate.registerEvents()
 	W, H = lg.getWidth(), lg.getHeight()
 	font = lg.newFont("roboto.ttf")
+	sfx.load()
 	Gamestate.switch(gGame)
 
 	World:register(new_renderer_system())

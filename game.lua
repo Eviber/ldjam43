@@ -7,6 +7,7 @@ local Component = require "component"
 local System = require "system"
 local coms = require "common_components"
 local dudes = require "dudes"
+local sfx = require "sfx"
 
 gGame = {}
 
@@ -129,6 +130,7 @@ function gGame:keypressed(key, scancode, isrepeat)
 		lastinput = love.timer.getTime()
 	end
 	if scancode == "up" or scancode == "down" or scancode == "left" or scancode == "right" then
+		sfx.shaman[scancode]:clone():play()
 		table.insert(last_key, scancode)
 	end
 	
