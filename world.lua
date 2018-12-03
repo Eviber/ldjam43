@@ -26,7 +26,7 @@ function World:assemble(components)
 			for j = 2, #v do
 				table.insert(args, v[j])
 			end
-			print(unpack(args))
+			--print(unpack(args))
 			entity:add(fn(unpack(args)))
 		end
 	end

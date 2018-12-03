@@ -1,6 +1,7 @@
 local Gamestate = require "hump.gamestate"
 require "game"
 require "combo_line"
+--cursor = 1
 
 local World = require "world"
 local Component = require "component"
@@ -62,7 +63,7 @@ function love.load()
 end
 
 
-function love.update()
+function love.update(dt)
 	World:update(dt)
 end
 
