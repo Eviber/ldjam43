@@ -29,7 +29,36 @@ local isDown = love.keyboard.isDown
 	
 end]]
 
+function loadassets()
+	shaman = lg.newImage("shaman.png")
+	poses = {}
+	for x = 0, 4550, 650 do
+		poses[#poses + 1] = lg.newQuad(x, 0, 650, 650, shaman:getDimensions())
+	end
+	pose = poses[1]
 
+	sheet = lg.newImage("dudes.png")
+	sprit = {}
+	for y = 0, 420, 420 do
+		for x = 0, 1800, 300 do
+			sprit[#sprit + 1] = lg.newQuad(x, y, 300, 420, sheet:getDimensions())
+		end
+	end
+	key_sheet = lg.newImage("keys.png")
+	key_sprit = {}
+	for x = 0, 153*5, 153 do
+		key_sprit[#key_sprit + 1] = lg.newQuad(x, 0, 153, 138, key_sheet:getDimensions())
+	end
+
+	typelist = init_dudes()
+	--for i, val in pairs(typelist) do print(val[1][1]) end
+	bg = lg.newImage("background.png")
+	blood = {
+		lg.newImage("blood1.png"),
+		lg.newImage("blood2.png"),
+		lg.newImage("blood3.png")
+	}
+end
 
 function love.load()
 	math.randomseed(os.time())
@@ -40,6 +69,9 @@ function love.load()
 	sfx.load()
 	menufont = lg.newFont("aztecways.ttf", 200)
 	font = lg.newFont("roboto.ttf", 70)
+
+	loadassets()
+
 	Gamestate.switch(gMenu)
 
 

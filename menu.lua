@@ -20,7 +20,7 @@ function gMenu:draw()
 	local W = 960
 	local H = 540
 	local key_sheet = lg.newImage("keys.png")
-	local arrow = lg.newQuad(453, 0, 151, 137, key_sheet:getDimensions())
+	local arrow = key_sprit[4]
 	
 	lg.setFont(menufont)
 	lg.print("Dance Dance", W - 370, H - 500)

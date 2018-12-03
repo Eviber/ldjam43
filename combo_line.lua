@@ -50,8 +50,8 @@ function new_combo_line_manager()
 		local line = entity:get("keys").line
 		local corres = {
 			up = 1,
-			left = 2,
-			down = 3,
+			down = 2,
+			left = 3,
 			right = 4,
 			any = 5,
 		}
