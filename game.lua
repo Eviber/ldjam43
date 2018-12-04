@@ -141,7 +141,7 @@ function gGame:update(dt)
 			print(string.format("%d points on day %d", score, day))
 			if score >= threshold[day] then
 				day = day + 1
-				manager.remove = true
+				--manager.remove = true
 			end
 			timer = 30
 			score = 0
@@ -163,9 +163,9 @@ function gGame:enter()
 	for i = 1, 13 do
 		pop()
 	end
-	--manager:get("keys").line = queue[1]:get("combo").template
-	--manager:get("keys").size = #queue[1]:get("combo").template
-	--manager:get("keys").cursor = 1
+	manager:get("keys").line = queue[1]:get("combo").template
+	manager:get("keys").size = #queue[1]:get("combo").template
+	manager:get("keys").cursor = 1
 	curblood = nil
 end
 

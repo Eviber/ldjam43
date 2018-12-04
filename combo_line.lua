@@ -19,6 +19,7 @@ function new_combo_line_manager()
 	local manager = System.new {"keys"}
 
 	function manager:update(dt, entity)
+		--print("hello")
 		local keys = entity:get("keys")
 		for i, val in ipairs(last_key) do
 			if keys.cursor <= keys.size then

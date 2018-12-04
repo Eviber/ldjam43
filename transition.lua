@@ -23,6 +23,7 @@ function gTransition:update(dt)
 	timer = timer + dt
 	if timer >= 4 then
 		timer = 0
+		--print"ohai"
 		Gamestate.switch(gGame)
 	end
 end
