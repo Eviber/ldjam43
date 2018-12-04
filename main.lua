@@ -55,7 +55,7 @@ function loadassets()
 	end
 
 	typelist = init_dudes()
-	--for i, val in pairs(typelist) do print(val[1][1]) end
+
 	bg = lg.newImage("background.png")
 	blood = {
 		lg.newImage("blood1.png"),
