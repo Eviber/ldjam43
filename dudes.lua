@@ -99,7 +99,7 @@ function init_dudes()
 	
 	king_man_type = {
 		{coms.new_body, 1860, 720},
-		{coms.new_value, 500},
+		{coms.new_value, 1000},
 		{coms.new_combo_template, {u,d,l,r,u,d,l,r}},
 		{coms.new_sprite, sheet, sprit[14]}
 	}
