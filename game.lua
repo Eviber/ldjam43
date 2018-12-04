@@ -8,6 +8,7 @@ local System = require "system"
 local coms = require "common_components"
 local dudes = require "dudes"
 local sfx = require "sfx"
+local vfx = require "vfx"
 
 last_key = {}
 
@@ -93,9 +94,9 @@ function gGame:draw()
 	drawqueue()
 	World:draw()
 	lg.setFont(buttonfont)
-	--lg.setColor(51/255, 51/255, 51/255)
 	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
 	lg.print({{51/255,51/255,51/255}, string.format("%02d", math.ceil(timer))}, 1780, 10)
+	vfx.draw()
 	TLfres.endRendering({0,0,0,0})
 end
 
@@ -128,7 +129,7 @@ function gGame:keypressed(key, scancode, isrepeat)
 end
 
 function gGame:update(dt)
-	threshold = {2500, 4000, 7000, 9000, 13000, 18000, 25000}
+	vfx.update(dt)
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end
