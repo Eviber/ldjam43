@@ -50,7 +50,7 @@ function init_dudes()
 	
 	old_man_type = {
 		{coms.new_body, 1860, 720},
-		{coms.new_value, 300},
+		{coms.new_value, 350},
 		{coms.new_combo_template, {u,u,l,l,d,d}},
 		{coms.new_sprite, sheet, sprit[7]}
 	}
@@ -78,14 +78,14 @@ function init_dudes()
 	
 	cat_type = {
 		{coms.new_body, 1860, 720},
-		{coms.new_value, 250},
+		{coms.new_value, 300},
 		{coms.new_combo_template, {d,d,d,d,d,d,d,d,d}},
 		{coms.new_sprite, sheet, sprit[11]}
 	}
 	
 	buff_man_type = {
 		{coms.new_body, 1860, 720},
-		{coms.new_value, 400},
+		{coms.new_value, 800},
 		{coms.new_combo_template, {l,r,u,d,u,r}},
 		{coms.new_sprite, sheet, sprit[12]}
 	}
