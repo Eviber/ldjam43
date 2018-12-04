@@ -7,6 +7,7 @@ gTransition = {}
 score = 0
 day = 1
 timer = 99
+threshold = {2500, 4000, 7000, 9000, 13000, 18000, 25000}
 
 require "menu"
 require "game"
@@ -72,6 +73,7 @@ function love.load()
 	sfx.load()
 	vfx.load()
 	menufont = lg.newFont("aztecways.ttf", 200)
+	buttonfont = lg.newFont("aztecways.ttf", 120)
 	font = lg.newFont("roboto.ttf", 70)
 
 	loadassets()

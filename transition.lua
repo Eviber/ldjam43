@@ -2,6 +2,8 @@ local Gamestate = require "hump.gamestate"
 local TLfres = require "tlfres"
 local lg = love.graphics
 
+local timer = 0
+
 
 function gTransition:draw()
 	TLfres.beginRendering(1920, 1080)
@@ -10,11 +12,17 @@ function gTransition:draw()
 	
 	lg.setFont(menufont)
 	lg.print(string.format("DAY %d", day), W-250, H-300)
-	lg.print("Press any key to continue", W-740, H+100)
+	lg.setFont(buttonfont)
+	lg.print(string.format("REACH %d", threshold[day]), W-320, H)
+	lg.print("TO SATISFY THE GODS !", W-700, H+200)
 	
 	TLfres.endRendering({0,0,0,0})
 end
 
-function gTransition:keypressed(key, scancode, isrepeat)
-	Gamestate.switch(gGame)
+function gTransition:update(dt)
+	timer = timer + dt
+	if timer >= 4 then
+		timer = 0
+		Gamestate.switch(gGame)
+	end
 end

@@ -136,8 +136,11 @@ function gGame:update(dt)
 	timer = timer - dt
 	if timer <= 0 then
 		if day < 7 then 
+			if score >= threshold[day] then
+				day = day + 1
+			end
 			timer = 99
-			day = day + 1
+			score = 0
 			Gamestate.switch(gTransition)
 		else
 			Gamestate.switch(gMenu)
