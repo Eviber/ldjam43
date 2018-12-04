@@ -23,9 +23,12 @@ function gCredits:draw()
 	lg.print("  Programming            Art      ", W-830, H-300)
 	lg.setFont(font)
 	lg.print("   Youva Gaudé            Lola Belloni  ", W-830, H-150)
-	lg.print("(twitter@youvadidj)        (instagram   ", W-830, H-50)
-	lg.print(" Théo Le Gac-Dufly       @boudoumgredon)", W-830, H+50)
-	lg.print(" (twitter@EHaamu)                       ", W-830, H+150)
+	lg.print("      @youvadidj        ", W-830, H-50)
+	lg.print(" Théo Le Gac-Dufly       @boudoumgredon", W-830, H+50)
+	lg.print("      @EHaamu                       ", W-830, H+150)
+	lg.draw(twitter, W-700, H-70, 0, 0.11)
+	lg.draw(twitter, W-700, H+130, 0, 0.11)
+	lg.draw(instagram, W+85, H+30, 0, 0.23)
 	
 
 	

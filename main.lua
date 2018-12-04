@@ -62,6 +62,9 @@ function loadassets()
 		lg.newImage("blood2.png"),
 		lg.newImage("blood3.png")
 	}
+	
+	twitter = lg.newImage("icon_twitter.png")
+	instagram = lg.newImage("icon_insta.png")
 end
 
 function love.load()
