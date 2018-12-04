@@ -128,14 +128,18 @@ function gGame:keypressed(key, scancode, isrepeat)
 end
 
 function gGame:update(dt)
+	threshold = {2500, 4000, 7000, 9000, 13000, 18000, 25000}
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end
 	timer = timer - dt
 	if timer <= 0 then
 		if day < 7 then 
+			if score >= threshold[day] then
+				day = day + 1
+			end
 			timer = 99
-			day = day + 1
+			score = 0
 			Gamestate.switch(gTransition)
 		else
 			Gamestate.switch(gMenu)
