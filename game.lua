@@ -20,10 +20,10 @@ function push()
 	local t1 = {sheep_type, pig_type, woman_type, man_type}
 	local t2 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type}
 	local t3 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type}
-	local t4 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2}
-	local t5 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type}
-	local t6 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type, buff_man_type}
-	local t7 = {sheep_type, pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type, buff_man_type, king_man_type}
+	local t4 = {pig_type, woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2}
+	local t5 = {woman_type, man_type, tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type}
+	local t6 = {tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type, buff_man_type}
+	local t7 = {tall_man_type, big_man_type, chicken_type, woman_type_2, man_type_2, cat_type, old_man_type, buff_man_type, king_man_type}
 	local days_tab = {t1, t2, t3, t4, t5, t6, t7}
 	--table.insert(queue, dudes[math.random(#dudes)])
 	--print (World:assemble(typelist[math.random(#typelist)]))
@@ -141,7 +141,7 @@ function gGame:update(dt)
 			print(string.format("%d points on day %d", score, day))
 			if score >= threshold[day] then
 				day = day + 1
-				manager.remove = true
+				--manager.remove = true
 			end
 			timer = 30
 			score = 0
@@ -163,9 +163,9 @@ function gGame:enter()
 	for i = 1, 13 do
 		pop()
 	end
-	--manager:get("keys").line = queue[1]:get("combo").template
-	--manager:get("keys").size = #queue[1]:get("combo").template
-	--manager:get("keys").cursor = 1
+	manager:get("keys").line = queue[1]:get("combo").template
+	manager:get("keys").size = #queue[1]:get("combo").template
+	manager:get("keys").cursor = 1
 	curblood = nil
 end
 

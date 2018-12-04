@@ -7,7 +7,7 @@ gTransition = {}
 score = 0
 day = 1
 timer = 30
-threshold = {2500, 4000, 7000, 9000, 13000, 18000, 25000}
+threshold = {1200, 1800, 2500, 3500, 4700, 6000, 7500}
 
 require "menu"
 require "game"

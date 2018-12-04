@@ -43,7 +43,7 @@ end
 function gMenu:keypressed(key, scancode, isrepeat)
 	if scancode == 'return' and selected == "Play" then
 		score = 0
-		day = 1
+		day = 4
 		Gamestate.switch(gTransition)
 	elseif scancode == 'return' and selected == "Credits" then
 		Gamestate.switch(gCredits)
