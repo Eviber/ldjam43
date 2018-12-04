@@ -163,6 +163,7 @@ function gGame:enter()
 	for i = 1, 13 do
 		pop()
 	end
+	curblood = nil
 	manager:get("keys").line = queue[1]:get("combo").template
 	manager:get("keys").size = #queue[1]:get("combo").template
 	manager:get("keys").cursor = 1
