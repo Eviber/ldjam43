@@ -1,10 +1,14 @@
 local coms = require "common_components"
+local u = "up"
+local d = "down"
+local l = "left"
+local r = "right"
 
 function init_dudes()
 	woman_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"up", "down"}},
+		{coms.new_combo_template, {u,d}},
 		{coms.new_sprite, sheet, sprit[1]}
 		
 	}
@@ -12,56 +16,56 @@ function init_dudes()
 	man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"down", "up"}},
+		{coms.new_combo_template, {d,u}},
 		{coms.new_sprite, sheet, sprit[2]}
 	}
 	
 	tall_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"up", "up", "up", "down"}},
+		{coms.new_combo_template, {u,u,u,d}},
 		{coms.new_sprite, sheet, sprit[3]}
 	}
 	
 	big_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"left", "right", "left", "right"}},
+		{coms.new_combo_template, {l,r,l,r}},
 		{coms.new_sprite, sheet, sprit[4]}
 	}
 	
 	woman_type_2 = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 200},
-		{coms.new_combo_template, {"up", "down", "left"}},
+		{coms.new_combo_template, {u,d,l}},
 		{coms.new_sprite, sheet, sprit[5]}
 	}
 	
 	man_type_2 = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 200},
-		{coms.new_combo_template, {"down", "up", "right"}},
+		{coms.new_combo_template, {d,u,r}},
 		{coms.new_sprite, sheet, sprit[6]}
 	}
 	
 	old_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
-		{coms.new_combo_template, {"up", "up", "left", "down", "down"}},
+		{coms.new_combo_template, {u,u,l,d,d}},
 		{coms.new_sprite, sheet, sprit[7]}
 	}
 	
 	pig_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"left", "up"}},
+		{coms.new_combo_template, {l,u}},
 		{coms.new_sprite, sheet, sprit[8]}
 	}
 	
 	sheep_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 100},
-		{coms.new_combo_template, {"down", "right"}},
+		{coms.new_combo_template, {d,r}},
 		{coms.new_sprite, sheet, sprit[9]}
 	}
 	
@@ -75,14 +79,14 @@ function init_dudes()
 	cat_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 150},
-		{coms.new_combo_template, {"down","down","down","down","down","down","down","down","down"}},
+		{coms.new_combo_template, {d,d,d,d,d,d,d,d,d}},
 		{coms.new_sprite, sheet, sprit[11]}
 	}
 	
 	buff_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
-		{coms.new_combo_template, {"left", "right", "up", "down", "up"}},
+		{coms.new_combo_template, {l,r,u,d,u}},
 		{coms.new_sprite, sheet, sprit[12]}
 	}
 	
@@ -96,7 +100,7 @@ function init_dudes()
 	buff_man_type = {
 		{coms.new_body, 1860, 720},
 		{coms.new_value, 300},
-		{coms.new_combo_template, {"up", "down","left", "right", "up", "down","left", "right"}},
+		{coms.new_combo_template, {u,d,l,r,u,d,l,r}},
 		{coms.new_sprite, sheet, sprit[14]}
 	}
 	
