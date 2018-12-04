@@ -120,6 +120,9 @@ function gGame:keypressed(key, scancode, isrepeat)
 	if scancode == "up" or scancode == "down" or scancode == "left" or scancode == "right" then
 		table.insert(last_key, scancode)
 	end
+	if scancode == "escape" then
+		Gamestate.switch(gMenu)
+	end
 	
 	--[[if scancode == queue[1][c] then
 		c = c + 1
