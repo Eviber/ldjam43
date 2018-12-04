@@ -9,7 +9,7 @@ function love.conf(t)
 
 	t.audio.mixwithsystem = true        -- Keep background music playing when opening LOVE (boolean, iOS and Android only)
 
-	t.window.title = "ldjam43"     -- The window title (string)
+	t.window.title = "Dance Dance SACRIFICES"     -- The window title (string)
 	t.window.icon = false          -- Filepath to an image to use as the window's icon (string)
 	t.window.width = 1920               -- The window width (number)
 	t.window.height = 1080              -- The window height (number)
