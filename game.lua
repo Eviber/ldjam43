@@ -135,9 +135,16 @@ function gGame:update(dt)
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
 	end
+	if score >= threshold[day] then
+		curblood = blood[3]
+	elseif score >= threshold[day] * 2 / 3 then
+		curblood = blood[2]
+	elseif score >= threshold[day] * 1 / 3 then
+		curblood = blood[1]
+	end
 	timer = timer - dt
 	if timer <= 0 then
-		if day < 7 then
+		if day <= 7 then
 			print(string.format("%d points on day %d", score, day))
 			if score >= threshold[day] then
 				day = day + 1
@@ -146,16 +153,10 @@ function gGame:update(dt)
 			timer = 30
 			score = 0
 			Gamestate.switch(gTransition)
-		else
-			Gamestate.switch(gMenu)
+			if day == 8 then
+				Gamestate.switch(gMenu)
+			end
 		end
-	end
-	if score >= threshold[day] then
-		curblood = blood[3]
-	elseif score >= threshold[day] * 2 / 3 then
-		curblood = blood[2]
-	elseif score >= threshold[day] * 1 / 3 then
-		curblood = blood[1]
 	end
 end
 
