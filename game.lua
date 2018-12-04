@@ -90,6 +90,7 @@ end
 function gGame:draw()
 	TLfres.beginRendering(1920, 1080)
 	lg.draw(bg)
+	if curblood then lg.draw(curblood) end
 	drawpriest()
 	drawcombo()
 	drawqueue()
@@ -148,6 +149,13 @@ function gGame:update(dt)
 		else
 			Gamestate.switch(gMenu)
 		end
+	end
+	if score >= threshold[day] then
+		curblood = blood[3]
+	elseif score >= threshold[day] * 2 / 3 then
+		curblood = blood[2]
+	elseif score >= threshold[day] * 1 / 3 then
+		curblood = blood[1]
 	end
 end
 
