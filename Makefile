@@ -1,6 +1,6 @@
 NAME=DDS
 
-RESOURCES= assets/ aztecways.ttf background.png blood*.png dudes.png hemo.png hump/ keys.png roboto.ttf saru.ttf shaman.png titlescreen.png hemo.png
+RESOURCES= assets/ aztecways.ttf background.png blood*.png dudes.png hemo.png hump/ keys.png roboto.ttf saru.ttf shaman.png titlescreen.png hemo.png icon_insta.png icon_twitter.png
 
 all:
 	zip	-r $(NAME).zip *.lua $(RESOURCES)
