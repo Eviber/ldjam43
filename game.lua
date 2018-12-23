@@ -99,7 +99,7 @@ function gGame:draw()
 	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
 	lg.print({{51/255,51/255,51/255}, string.format("%02d", math.ceil(timer))}, 1780, 10)
 	vfx.draw()
-	TLfres.endRendering({0,0,0,0})
+	TLfres.endRendering()
 end
 
 

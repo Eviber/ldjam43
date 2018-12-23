@@ -63,7 +63,7 @@ function TLfres.beginRendering(width, height, centered)
    return scale
 end
  
-local _black = {0, 0, 0, 255}
+local _black = {0, 0, 0, 1}
  
 -- Pops out of the transform; if letterboxColor is true, draws black letterbox
 -- bars. letterboxColor can also be any {r, g, b, a} table.
@@ -75,16 +75,18 @@ function TLfres.endRendering(letterboxColor)
    local width, height = currentlyRendering[1], currentlyRendering[2]
    currentlyRendering = nil
    lgPop()
---[[ 
+
    local w, h = lwGetMode()
    local scale = min(w/width, h/height)
    width, height = width * scale, height * scale
  
+   local r, g, b, a = love.graphics.getColor()
    lgSetColor(letterboxColor or _black)
    lgRectangle("fill", 0, 0,  w,  0.5 * (h - height)) -- top
    lgRectangle("fill", 0, h,  w, -0.5 * (h - height)) -- bottom
    lgRectangle("fill", 0, 0,  0.5 * (w - width), h)   -- left
-   lgRectangle("fill", w, 0, -0.5 * (w - width), h)   -- right]]
+   lgRectangle("fill", w, 0, -0.5 * (w - width), h)   -- right
+   lgSetColor(r, g, b, a)
 end
  
 return TLfres
