@@ -9,6 +9,7 @@ local coms = require "common_components"
 local dudes = require "dudes"
 local sfx = require "sfx"
 local vfx = require "vfx"
+local Cloud = require "cloud"
 
 last_key = {}
 
@@ -90,6 +91,7 @@ end
 function gGame:draw()
 	TLfres.beginRendering(1920, 1080)
 	lg.draw(bg)
+	for _, cloud in ipairs(clouds) do lg.draw(cloud.canvas, cloud.x, cloud.y) end
 	if curblood then lg.draw(curblood) end
 	drawpriest()
 	drawcombo()
@@ -133,7 +135,17 @@ function gGame:keypressed(key, scancode, isrepeat)
 	end]]
 end
 
+local tc = 0
 function gGame:update(dt)
+	dt = dt
+	tc = tc + dt
+	if tc > 1 then
+		if math.random(0, 10) == 0 then
+			clouds[#clouds + 1] = Cloud.new()
+		end
+		tc = 0
+	end
+	Cloud.update(clouds, dt)
 	vfx.update(dt)
 	if not isDown("up", "down", "left", "right") then
 		pose = poses[1]
@@ -171,5 +183,6 @@ function gGame:enter()
 	manager:get("keys").size = #queue[1]:get("combo").template
 	manager:get("keys").cursor = 1
 	curblood = nil
+	clouds = {}
 end
 
