@@ -56,11 +56,19 @@ function loadassets()
 
 	typelist = init_dudes()
 
-	bg = lg.newImage("background.png")
+	bg = {
+		hill1      = lg.newImage("assets/art/hill1.png"),
+		hill2      = lg.newImage("assets/art/hill2.png"),
+		nighthill1 = lg.newImage("assets/art/nighthill1.png"),
+		nighthill2 = lg.newImage("assets/art/nighthill2.png"),
+		pyra       = lg.newImage("assets/art/pyramid.png"),
+		nsky       = lg.newImage("assets/art/nightsky.png"),
+		score      = lg.newImage("assets/art/score.png")
+	}
 	blood = {
-		lg.newImage("blood1.png"),
-		lg.newImage("blood2.png"),
-		lg.newImage("blood3.png")
+		lg.newImage("assets/art/blood1.png"),
+		lg.newImage("assets/art/blood2.png"),
+		lg.newImage("assets/art/blood3.png")
 	}
 	
 	twitter = lg.newImage("icon_twitter.png")

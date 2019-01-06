@@ -88,10 +88,17 @@ function drawpriest()
 	lg.draw(shaman, pose, 835, 415, 0, 0.3)
 end
 
+function drawbg()
+	lg.clear(248/255, 208/255, 176/255)
+	lg.draw(bg.hill1)
+	lg.draw(bg.hill2)
+	for _, cloud in ipairs(clouds) do lg.draw(cloud.canvas, cloud.x, cloud.y) end
+	lg.draw(bg.pyra)
+end
+
 function gGame:draw()
 	TLfres.beginRendering(1920, 1080)
-	lg.draw(bg)
-	for _, cloud in ipairs(clouds) do lg.draw(cloud.canvas, cloud.x, cloud.y) end
+	drawbg()
 	if curblood then lg.draw(curblood) end
 	drawpriest()
 	drawcombo()
