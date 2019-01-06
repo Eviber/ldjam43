@@ -59,11 +59,14 @@ function loadassets()
 	bg = {
 		hill1      = lg.newImage("assets/art/hill1.png"),
 		hill2      = lg.newImage("assets/art/hill2.png"),
+		duskhill1  = lg.newImage("assets/art/duskhill1.png"),
+		duskhill2  = lg.newImage("assets/art/duskhill2.png"),
 		nighthill1 = lg.newImage("assets/art/nighthill1.png"),
 		nighthill2 = lg.newImage("assets/art/nighthill2.png"),
 		pyra       = lg.newImage("assets/art/pyramid.png"),
 		nsky       = lg.newImage("assets/art/nightsky.png"),
-		score      = lg.newImage("assets/art/score.png")
+		moon       = lg.newImage("assets/art/moon.png"),
+		score      = lg.newImage("assets/art/score.png"),
 	}
 	blood = {
 		lg.newImage("assets/art/blood1.png"),
