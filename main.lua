@@ -4,6 +4,7 @@ gGame = {}
 gMenu = {}
 gCredits = {}
 gTransition = {}
+gScore = {}
 score = 0
 day = 1
 timer = 30
@@ -11,6 +12,7 @@ threshold = {1200, 1800, 2500, 3500, 4700, 6000, 7500}
 
 require "menu"
 require "game"
+require "drawscore"
 require "combo_line"
 require "sfx"
 
@@ -67,6 +69,9 @@ function loadassets()
 		nsky       = lg.newImage("assets/art/nightsky.png"),
 		moon       = lg.newImage("assets/art/moon.png"),
 		score      = lg.newImage("assets/art/score.png"),
+		scoretxt   = lg.newImage("assets/art/scoretxt.png"),
+		space      = lg.newImage("assets/art/space.png"),
+		bords      = lg.newImage("assets/art/bord.png"),
 	}
 	blood = {
 		lg.newImage("assets/art/blood1.png"),

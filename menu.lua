@@ -12,6 +12,9 @@ function gMenu:init()
 	title_screen = lg.newImage("titlescreen.png")
 end
 
+function gMenu:enter()
+	fromMenu = true
+end
 
 function gMenu:update(dt)
 	

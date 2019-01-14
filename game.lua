@@ -126,6 +126,7 @@ function drawbg()
 	end
 	for _, cloud in ipairs(clouds) do lg.draw(cloud.canvas, cloud.x, cloud.y) end
 	lg.draw(bg.pyra)
+	lg.draw(bg.bords)
 end
 
 function gGame:draw()
@@ -138,7 +139,7 @@ function gGame:draw()
 	World:draw()
 	lg.setFont(buttonfont)
 	lg.print({{51/255,51/255,51/255}, string.format("%08d", score)}, 20, 10)
-	lg.print({{51/255,51/255,51/255}, string.format("%02d", math.ceil(timer))}, 1780, 10)
+	lg.print({{51/255,51/255,51/255}, string.format("%02d", math.ceil(timer))}, 1830, 10)
 	vfx.draw()
 	TLfres.endRendering()
 end
@@ -204,9 +205,7 @@ function gGame:update(dt)
 				day = day + 1
 				--manager.remove = true
 			end
-			timer = 30
-			score = 0
-			Gamestate.switch(gTransition)
+			Gamestate.switch(gScore)
 			if day == 8 then
 				Gamestate.switch(gMenu)
 			end
@@ -218,10 +217,15 @@ function gGame:enter()
 	for i = 1, 13 do
 		pop()
 	end
+	if fromMenu then
+		fromMenu = false
+	end
 	manager:get("keys").line = queue[1]:get("combo").template
 	manager:get("keys").size = #queue[1]:get("combo").template
 	manager:get("keys").cursor = 1
 	curblood = nil
 	clouds = {}
+	timer = 30
+	score = 0
 end
 
